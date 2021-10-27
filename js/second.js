@@ -15,3 +15,20 @@ hogy a tömb minden eleme number típusú-e vagy sem
 - `someElementsAreNumbers`: Értéke true/false attól függően, 
 hogy a tömbben van-e number típusú elem vagy sem
 */
+let numberArray = ['Gergely', 'Evelin', '145', 'József'];
+let primitive = 'ly';
+let output;
+const checker = function (numberArray, primitive) {
+	output = ({
+		exists: numberArray.includes(primitive) ? true : false,
+		index: numberArray.indexOf(primitive),
+		allElementsAreNumbers: numberArray.every(function (element) {
+			return typeof element === 'number';
+		}), // Értéke true/false attól függően, hogy a tömb minden eleme number típusú-e vagy sem
+		someElementsAreNumbers: numberArray.some(function (element) {
+			return typeof element === 'number';
+		}),
+	});
+	console.log(output);
+	return output;
+}
